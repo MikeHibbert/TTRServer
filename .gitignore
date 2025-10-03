@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Virtual environments and env files
+.env
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Build & packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs & cache
+*.log
+logs/
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Databases (dev)
+eom.db
+*.sqlite3
+*.db
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Python version manager
+.python-version

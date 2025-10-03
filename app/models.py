@@ -53,7 +53,7 @@ class Asset3D(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     prompt: Mapped[str] = mapped_column(String)
     gltf_url: Mapped[str] = mapped_column(String)
-    metadata: Mapped[dict | None] = mapped_column(JSON, nullable=True)  # includes vertices, textures, embedding
+    meta: Mapped[dict | None] = mapped_column(JSON, nullable=True)  # includes vertices, textures, embedding
     gen_ts: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     usage_count: Mapped[int] = mapped_column(Integer, default=0)
 

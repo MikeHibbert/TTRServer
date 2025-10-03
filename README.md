@@ -27,6 +27,11 @@ FastAPI-based backend for the "Echoes of Mercy" VR experience. Implements AI-dri
    celery -A app.celery_app.celery_app worker --loglevel=INFO
    ```
 
+6. Seed initial data (vignettes and 3D assets):
+   ```bash
+   python -m app.seed
+   ```
+
 Open `http://localhost:8000/docs` for interactive API docs.
 
 ## Environment Variables
@@ -42,8 +47,15 @@ Open `http://localhost:8000/docs` for interactive API docs.
 ## Notes
 
 - In dev, the 3D generation call is stubbed and will fall back to the best cached asset if generation times out or is unavailable.
-- Embeddings are computed via `sentence-transformers` and stored in `3d_assets.metadata` under key `embedding` for similarity search.
+- Embeddings are computed via `sentence-transformers` and stored in `3d_assets.meta` under key `embedding` for similarity search.
 - Imprint events are logged (console) but not persisted per spec.
+
+## Seeding
+
+- Run `python -m app.seed` to insert:
+  - Vignettes for houses 1–5 with base prompts and memory scripts.
+  - Initial 3D assets with precomputed embeddings to enable fallback selection.
+  - You can edit `app/seed.py` to add more assets or vignette data.
 
 ## Project Structure
 
